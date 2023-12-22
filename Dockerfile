@@ -10,5 +10,5 @@ RUN npm install
 RUN ./node_modules/gulp/bin/gulp.js build
 RUN jekyll build
 
-FROM nginx:alpine
+FROM nginx:1.25.3-alpine3.18
 COPY --from=build /tmp/_site /usr/share/nginx/html
